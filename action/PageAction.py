@@ -26,11 +26,12 @@ def open_browser(browser):
     try:
         if browser.lower() == 'ie':
             driver = webdriver.Ie(executable_path=iePath)
-        elif browser.lower() == 'chrome':
-            driver = webdriver.Chrome(executable_path=chromePath)
+        elif browser.lower() == 'fireFox':
+            driver = webdriver.Firefox()
         else:
             # driver = webdriver.Firefox(executable_path=fireFox)
-            driver = webdriver.Firefox()
+            # driver = webdriver.Chrome(executable_path=chromePath)
+            driver = webdriver.Chrome()
     except Exception as e:
         raise e
     else:
@@ -207,15 +208,6 @@ def quit_browser():
 
 
 if __name__ == '__main__':
-    open_browser('firefox')
+    open_browser('chrome')
     load_url('http://www.baidu.com')
-    # inputValue('id', 'kw','python')
-    # clear('id', 'kw')
-    # inputValue('id', 'kw', 'python')
-    # clickBtn('id', 'su')
-    # sleep(3)
-    # title = getTitle()
-    # print(title)
-    # assertTitle('python')
-    # assert_string_in_page_source('python')
     ctrl_v('python')
